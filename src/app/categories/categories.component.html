@@ -1,0 +1,32 @@
+
+<div >
+  <div class="ui centered grid" style="margin-top: 3rem;">
+    <div class="fourteen wide column">
+
+      <h1 class="ui centered aligned header">
+        <h1>Categories {{val}} </h1>
+
+        <select class = "dibs" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"  (click)=" getTwo()" (change)="onChange($event)">
+          <option selected value="all">General</option>
+          <ng-container *ngFor="let category of cat">
+
+            <option *ngIf="category.assignable" [value]="category.id" >{{category.title}}</option>
+
+          </ng-container>
+
+      </select>
+
+
+      </h1>
+
+
+    </div>
+  </div>
+  <div>
+
+
+
+
+
+    <app-cat-container></app-cat-container>
+  </div>

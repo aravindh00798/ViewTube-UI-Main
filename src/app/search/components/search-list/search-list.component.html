@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div>
+
+
+  <div class="ui special centered card">
+    <div class="image">
+      <img class="done" [src]="videos.thumbnail">
+      <a class="button" [href]="videos.videoUrl" target="_blank">
+        <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i> </a>
+    </div>
+    <div class="content">
+      <p class="header" style="margin: 1em 0 1em 0;">{{ videos.title?.slice(0,35) }}......</p>
+      <div class="meta">
+        <span class="date" style="font-weight: bolder;">
+          <a [href]="videos.channelUrl" target="_blank">{{ videos.channelTitle?.slice(0,17) }}</a>
+        </span>
+        <span class="ui right floated date" style="font-weight: bolder;">{{ videos.publishedAt | date:'mediumDate' }}</span>
+      </div>
+      <br>
+      <i *ngIf = "addedToWishList" class="fas fa-heart float-left"  (click) =  handleRemoveWishList()></i>
+      <i *ngIf = "!addedToWishList" class="far fa-heart float-left "  (click) = handleAddToWishList()></i>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+

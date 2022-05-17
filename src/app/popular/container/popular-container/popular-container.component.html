@@ -1,0 +1,32 @@
+
+<div class="ui left grid" style="margin-bottom: 0.1rem;" style="margin-top: 0.5rem;">
+  <div class="fourteen wide column">
+
+    <h1 class="ui left aligned header">
+
+     <img id = "img" src="https://icons.veryicon.com/png/o/miscellaneous/black-yellow-linear-simple-icon/popular-12.png"
+     routerLink="home/popular"
+      >
+         Popular
+
+      </h1>
+
+  </div>
+</div>
+<div>
+
+
+<div>
+
+  <app-popular-button (click)="handleSearch()"></app-popular-button>
+
+
+
+  <div class="ui stackable four column centered grid">
+  <div class="column" *ngFor="let popular of popularList">
+
+
+  <app-popular-list  [populars]="popular"  [addedToWishList]= "wishlist.indexOf(popular.videoId) >=0"></app-popular-list>
+</div>
+</div>
+</div>

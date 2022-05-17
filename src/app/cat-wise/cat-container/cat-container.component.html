@@ -1,0 +1,12 @@
+<br>
+
+
+<div>
+  <app-cat-btn #popularbtn  (click)="handleSearch()"></app-cat-btn>
+
+  <div class="ui stackable four column centered grid">
+  <div class="column" *ngFor="let cat of catList">
+  <app-cat-list *ngIf="!loading" [cats]="cat"  [addedToWishList]= "wishlist.indexOf(cat.videoId) >=0"> </app-cat-list>
+</div>
+</div>
+</div>

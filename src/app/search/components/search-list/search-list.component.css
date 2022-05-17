@@ -1,0 +1,26 @@
+.fa-heart{
+    color:palevioletred;
+    cursor:pointer;
+}
+
+
+.button{
+  display: none ;
+}
+
+.done:hover{
+  filter: brightness(50%);
+  transition: all 0.3s ease;
+}
+.done{
+  transition:all .5s ease-out 0.4s;
+}
+
+
+.done:hover +.button ,.button:hover{
+  display: inline-block;
+  position: absolute;
+  top:80px;
+  left: 130px;
+
+}

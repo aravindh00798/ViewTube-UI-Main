@@ -1,0 +1,17 @@
+.sieze{
+  width:3rem !important;
+  margin:1rem !important;
+
+}
+.form-select{
+  width:70% !important;
+  display: inline-block;
+}
+/* option{
+  width:100%;
+}
+@media only screen and (max-width: 760px) {
+  option{
+    max-width: fit-content;
+  }
+} */
