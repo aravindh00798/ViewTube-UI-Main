@@ -3,5 +3,15 @@
   margin: 1rem !important;
 }
 h1{
+  text-align: center;
 color: linear-gradient(90deg,#d1aad7,#c88bc4 25.17%,#7b8fdd 50%,#86bff2 73.09%,#bbdef2);
 }
+@media only screen and (min-width:769px){
+  .carousel-inner{
+    height: 60vh !important;
+  
+  }
+  .img-fluid{
+    height:60%;
+  }
+  }
