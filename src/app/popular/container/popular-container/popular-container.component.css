@@ -2,3 +2,6 @@
   width: 3rem !important;
   margin: 1rem !important;
 }
+h1{
+color: linear-gradient(90deg,#d1aad7,#c88bc4 25.17%,#7b8fdd 50%,#86bff2 73.09%,#bbdef2);
+}

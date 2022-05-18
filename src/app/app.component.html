@@ -14,9 +14,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+  
 <nav *ngIf="!isUserLoggedIn" class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" routerLink="home" (click)="HomePage()" (click)="getBack()" >ViewTube</a>
+ 
+  <a  class="abcd" class="navbar-brand" routerLink="home" (click)="HomePage()" (click)="getBack()" >ViewTube</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -25,13 +26,13 @@
     <app-search-input class="searchbar" (search)="handleSearch($event)"></app-search-input>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link"  (click)="category()"  routerLink="Categories" >Category</a>
+        <a class="nav-link"  (click)="category()"  routerLink="home/Categories" >Category</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="openlogin()"  (click)="toogleTag">Sign In</a>
+        <a class="nav-link" (click)="openlogin()"  (click)="toogleTag"  routerLink="abc">Sign In</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="openSignup()">Sign Up</a>
+        <a class="nav-link" (click)="openSignup()"  routerLink="abcc">Sign Up</a>
       </li>
 
     </ul>
@@ -49,26 +50,28 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     <app-search-input class="searchbar"  (search)="handleSearch($event)"></app-search-input>
-
+ 
+    
 
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" (click)="category()" routerLink="homeCategories" >Category</a>
+      <li class="nav-item" class="nav-link" style="color: white;">
+             Welcome {{userDetails.userName}}
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="home/Favorites" >Favorites</a>
+        <a  class="nav-link" (click)="category()" routerLink="home/Categories" >Category</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="openFavourtie()" >Favorites</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" (click)="onLogout()"  (click)="toogleTag">Logout</a>
       </li>
-      <li class="nav-item">
-        <a (click)="Send()" class="nav-link" >List</a>
-      </li>
+      
 
     </ul>
 
-
   </div>
+  
 </nav>
 
 <div>

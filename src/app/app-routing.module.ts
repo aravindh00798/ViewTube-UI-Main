@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:'home/Fav',component:FavHolderComponent},
 
   {path:"home/popular",component:PopularContainerComponent},
-  {path:"Categories",component:CategoriesComponent},
+  {path:"home/Categories",component:CategoriesComponent},
   {
     path: 'user', component: UserComponent,
     children: [

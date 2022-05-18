@@ -30,7 +30,7 @@ export class SearchListComponent implements OnInit {
     handleAddToWishList()
     {
       if (localStorage.getItem('token') != null){
-          LoginComponent.wishlist = LoginComponent.wishlist.concat({"id" : this.videos.videoId});
+          LoginComponent.wishlist = LoginComponent.wishlist.concat({"id" : this.videos});
           this.addedToWishList = true;
           this.youtube.UpdateFavEntry(JSON.stringify(LoginComponent.wishlist));
       }

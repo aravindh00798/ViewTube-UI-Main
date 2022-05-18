@@ -1,35 +1,57 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+
+
+
+<div >
+<h1 style ="display:inline">Favourite</h1>
+<span class="nm"></span>
+</div>
+
 <div class="ui stackable four column centered grid">
-  <div class="column" *ngFor="let item of data">
 
-<button (click) =  handleRemoveWishList(item) (click) =  reloadCurrentPage()>Remove</button>
-<youtube-player
-
+<div class="column" *ngFor="let item of data">
+<div>
+    <youtube-player
 videoId= {{item}}
 suggestedQuality="highres"
 [height]="200"
-[width]="200"
+[width]="170"
 [startSeconds]="2"
 [endSeconds]="150">
 </youtube-player>
+
+</div>
+<button (click) =  handleRemoveWishList(item) (click) =  reloadCurrentPage()>Remove</button>
 </div>
 </div>
-<button  routerLink="/home" class="btn btn-primary">Add Again</button>
 
 
 
+
+
+
+
+
+
+
+
+
+
+  
 <ng-container *ngIf= " data.length==0">
-  <div id="content" class="container">
-      <div class="card">
-          <h5 class="card-title">My Fav</h5>
-
-      </div>
-
-  <div class="center">
-      <img src="https://cdn.xxl.thumbs.canstockphoto.com/flat-design-empty-heart-shaped-box-icon-vector-illustration-image_csp39226178.jpg">
-      <h4>No Favourte added</h4>
-      <h6>Add Favourte</h6>
-      <button  routerLink="/Search" class="btn btn-primary">Add Now</button>
+  <div class="abc">
+  <div   class="ui stackable four column centered grid">
+  
+  
+    <i class="bi bi-heart fa-10x"></i>
   </div>
 
-  </div>
+  <div class="ui stackable four column centered grid">
+  <span class="label label-danger">No favourite added</span>
+</div>
+
+</div>
+  
+
+
   </ng-container>

@@ -6,6 +6,7 @@ import { LoginComponent } from './user/login/login.component';
 import {MatDialog} from '@angular/material/dialog';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { FavHolderComponent } from './fav-holder/fav-holder.component';
 
 
 @Component({
@@ -122,7 +123,9 @@ getBack(){
 
 
 openlogin() {
-  const dialogRef = this.dialog.open(LoginComponent);
+  const dialogRef = this.dialog.open(LoginComponent,{
+    // width:'30%',
+  });
 
   dialogRef.afterClosed().subscribe(result => {
     console.log(`Dialog result: ${result}`);
@@ -131,22 +134,26 @@ openlogin() {
 
 openSignup() {
   const dialogRef = this.dialog.open(RegistrationComponent,{
-    panelClass : 'signup'
+    panelClass : 'signup',
+    
   })
 
   dialogRef.afterClosed().subscribe(result => {
     console.log(`Dialog result: ${result}`);
   });
 }
-// openCategories() {
-//   const dialogRef = this.dialog.open(CategoriesComponent,{
-//     panelClass:'dialog-responsive'
-//   })
+openFavourtie() {
+  const dialogRef = this.dialog.open(FavHolderComponent,{
+    panelClass:'dialog-responsive',
+    width:'60%',
+    height:'60%'
+    
+  })
 
-//   dialogRef.afterClosed().subscribe(result => {
-//     console.log(`Dialog result: ${result}`);
-//   });
-// }
+  dialogRef.afterClosed().subscribe(result => {
+    console.log(`Dialog result: ${result}`);
+  });
+}
 
 
 }

@@ -115,7 +115,7 @@ private API_TOKEN = 'AIzaSyBig3j8GHSZnzGXti5VLW6TGQ1Le8vTgik';
     }
 
     login(formData) {
-      return this.http.post(this.BaseURI + '/ApplicationUser/Login', formData);
+      return this.http.post(this.BaseURI + '/login', formData);
     }
 
 
@@ -126,7 +126,7 @@ private API_TOKEN = 'AIzaSyBig3j8GHSZnzGXti5VLW6TGQ1Le8vTgik';
 
     CreateFavEntry(_username:string, _json:string){
       var fav = {
-        UserName: _username,
+        Id: _username,
         Json: _json
       };
         return this.http.post(this.BaseURI + '/favorite', fav);
@@ -137,11 +137,11 @@ private API_TOKEN = 'AIzaSyBig3j8GHSZnzGXti5VLW6TGQ1Le8vTgik';
           this.getUserProfile().subscribe(
             res => {this.userDetails = res;
             var fav = {
-              UserName: this.userDetails.userName,
+              Id: this.userDetails.userName,
               Json: wishlist
             };
             console.log(fav);
-            this.http.put(this.BaseURI + '/Favorites/' + this.userDetails.userName, fav).subscribe(res => {}, err => {console.log(err);},);
+            this.http.put(this.BaseURI + '/favorite/' + this.userDetails.userName, fav).subscribe(res => {}, err => {console.log(err);},);
           },
             err => {console.log(err);},
           );
@@ -150,7 +150,7 @@ private API_TOKEN = 'AIzaSyBig3j8GHSZnzGXti5VLW6TGQ1Le8vTgik';
      GetFavEntries(){
       this.getUserProfile().subscribe(
         res => {this.userDetails = res;
-        return this.http.get(this.BaseURI + '/Favorites/' + this.userDetails.userName).subscribe(res => {this.userDetails = res;
+        return this.http.get(this.BaseURI + '/favorite/' + this.userDetails.userName).subscribe(res => {this.userDetails = res;
           if(this.userDetails.json == ""){
             LoginComponent.wishlist = [{}];
             LoginComponent.wishlist.shift();
@@ -167,7 +167,7 @@ private API_TOKEN = 'AIzaSyBig3j8GHSZnzGXti5VLW6TGQ1Le8vTgik';
     SearchAndDestroy(value: string) {
       var position = null;
    for (var i = 0; i < LoginComponent.wishlist.length; i++) {
-        if(LoginComponent.wishlist[i]["id"] == value){
+        if(LoginComponent.wishlist[i]["id"]["videoId"] == value){
           position = i;
           break;
         };

@@ -7,9 +7,18 @@
     width: auto;
 }
 
+body{
+
+  background: azure !important;
+}
 /* body{
-  background-image: url('try.jpeg');
+  background: rgb(223, 231, 225);
+background: radial-gradient(circle, rgb(230, 236, 231) 0%, rgb(222, 227, 219) 35%, rgb(232, 235, 239) 100%);
 } */
+ /* body{
+  background: rgb(4, 4, 4) !important;
+background: linear-gradient(90deg, rgb(12, 11, 11) 0%, rgb(93, 87, 87) 35%, rgb(98, 69, 65) 100%) !important;
+}  */
 
 .ui.card{
   border-radius: 10px;

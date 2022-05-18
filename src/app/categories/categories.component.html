@@ -1,12 +1,13 @@
-
 <div >
   <div class="ui centered grid" style="margin-top: 3rem;">
     <div class="fourteen wide column">
-
+      
       <h1 class="ui centered aligned header">
-        <h1>Categories {{val}} </h1>
-
-        <select class = "dibs" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"  (click)=" getTwo()" (change)="onChange($event)">
+       <img id = "img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdIlSibIu38IYY6iLFphN-RbIhXQ5eQdLeGZEhOl627QDtN_1OU-xwLiDddQGfBbjlWq8&usqp=CAU">
+ <h1 >Categories</h1>
+        
+        <select id="picDD1" onmouseover="this.size = 6" onmouseout="this.size = 1"
+        class = "dibs" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"  (click)=" getTwo()" (change)="onChange($event)">
           <option selected value="all">General</option>
           <ng-container *ngFor="let category of cat">
 

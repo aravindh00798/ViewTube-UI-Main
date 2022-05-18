@@ -1,0 +1,30 @@
+.abc{
+
+    width: 100px;
+    height: 100px;
+    
+    
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
+}
+
+.nm
+{
+    height: 2px;
+    flex-grow: 1;
+    /* background: linear-gradient(90deg,transparent 5%,var(--theme-color-translucent) 15%); */
+    position: relative;
+    top: 50%;
+    
+    display: block;
+    background-color:green;
+    /* background: linear-gradient(90deg,transparent 5%,var(--theme-color-translucent) 15%); */
+}
+
+
+
